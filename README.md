@@ -14,10 +14,13 @@ Start working now (I'll tell you when I'd needed it.)_
 
 Which translates to:
 
-    var i = 3;
-    var future = Future
-        .Bring<int>(() => i + 1)
-        .Start();
+```
+C#
+var i = 3;
+var future = Future
+    .Bring<int>(() => i + 1)
+    .Start();
+```
 
 The previous expression will return immediately, and
 you can do another work meanwhile. Once you reach to
