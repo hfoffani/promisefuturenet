@@ -4,6 +4,33 @@ This is a couple of helpers I wrote to abstract
 an asynchronous programming by loosely following
 the Promise / Future model.
 
+I've written these clases to help you translate
+an ideal asynchronous process from English into
+C#.
+
+For instance, you might want to say: _The Future
+will Bring me an integer, whose value is the result of i + 1,
+Start working now (I'll tell you when I'd needed it.)_
+
+Which translates to:
+
+```C#
+var i = 3;
+var future = Future
+    .Bring<int>(() => i + 1)
+    .Start();
+```
+
+The previous expression will return immediately, and
+you can do another work meanwhile. Once you reach to
+a point where you need the integer value to proceed,
+ask for it by calling `future.Value`. It will block
+if the process haven't finished or return without
+blocking if process had finished some time before.
+
+
+### Use cases ###
+
 See the test file for different use cases.
 
 
