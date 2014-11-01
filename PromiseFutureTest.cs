@@ -15,10 +15,10 @@ namespace PromiseFuture
 {
     [TestClass]
     public class TS_Async
-	{
+    {
         [TestMethod]
         public void UseCase_01()
-		{
+        {
             var i = 3;
             var future = Future
                 .Bring<int>(() => i + 1)
@@ -29,7 +29,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_02()
-		{
+        {
             var i = 3;
             var future = Future
                 .Bring<int>(() => i + 1000)
@@ -42,7 +42,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_03()
-		{
+        {
             var i = 30;
             var futureVal = Future
                 .Bring<int>(() => i + 1000)
@@ -57,7 +57,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_04()
-		{
+        {
             var i = 30;
             var f1 = Future
                 .Bring<int>(() => i + 1000)
@@ -76,7 +76,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_05()
-		{
+        {
             var i = 30;
             var f1 = Future
                 .Bring<int>(() => i + 1000)
@@ -99,7 +99,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_06()
-		{
+        {
             var error = false;
             var i = 0;
             var future = Future
@@ -115,7 +115,7 @@ namespace PromiseFuture
         [TestMethod,
         ExpectedException(typeof(DivideByZeroException))]
         public void UseCase_07()
-		{
+        {
             var i = 0;
             var future = Future
                 .Bring<int>(() => 10 / i)
@@ -127,7 +127,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_11()
-		{
+        {
             var i = 3;
             var future = Future
                 .Bring<int>(() => {
@@ -144,7 +144,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_12()
-		{
+        {
             var i = 3;
             var future = Future
                 .Bring<int>(() => {
@@ -161,7 +161,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_13()
-		{
+        {
             var error = false;
             var i = 0;
             var future = Future
@@ -177,7 +177,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_14()
-		{
+        {
             var error = false;
             var i = 0;
             var future = Future
@@ -196,7 +196,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_15()
-		{
+        {
             var i = 0;
             var future = Future
                 .Bring<int>((supervisor) => {
@@ -220,7 +220,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_20()
-		{
+        {
             Func<int> g = () => 1 + 2;
             dynamic gd = g;
             var future = Future
@@ -234,7 +234,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_21()
-		{
+        {
             Func<FutureSupervisor, object> g = (supervisor) => 1 + 2;
             dynamic gd = g;
             var future = Future
@@ -248,7 +248,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_22()
-		{
+        {
             Func<FutureSupervisor, object> g = (supervisor) => 1 + 2;
             dynamic gd = g;
             Func<FutureSupervisor, object, object> t = (supervisor, p) => p;
@@ -269,7 +269,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_30()
-		{
+        {
             var i = 3;
             var future = Future
                 .Bring<int>(() => i + 1)
@@ -282,7 +282,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_31()
-		{
+        {
             var i = 3;
             var future = Future
                 .Bring<int>(() => i + 1)
@@ -295,7 +295,7 @@ namespace PromiseFuture
 
         [TestMethod]
         public void UseCase_40()
-		{
+        {
             var i = 30;
             var f1 = Future
                 .Bring<int>(() => i + 1000)
