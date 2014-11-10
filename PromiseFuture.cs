@@ -23,6 +23,23 @@ namespace PromiseFuture
             else
                 return Future.Bring<object>((Func<object>)byusing);
         }
+
+        private static TaskScheduler current;
+
+        internal static TaskScheduler CurrentScheduler
+        {
+            get { return current; }
+            private set { current = value; }
+        }
+
+        public static void UnderGUI()
+        {
+            if (CurrentScheduler != null)
+                return;
+            if (SynchronizationContext.Current == null)
+                SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
+            CurrentScheduler = TaskScheduler.FromCurrentSynchronizationContext();
+        }
     }
 
 
@@ -198,7 +215,7 @@ namespace PromiseFuture
             if (_options != FutureOptions.Synchronous) {
                 var sched = TaskScheduler.Current;
                 if (_options == FutureOptions.ResultInGUI)
-                    sched = TaskScheduler.FromCurrentSynchronizationContext();
+                    sched = Future.CurrentScheduler;
                 _task.Start(sched);
             }
         }
