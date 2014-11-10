@@ -296,6 +296,7 @@ namespace PromiseFuture
         [TestMethod]
         public void UseCase_40()
         {
+            Future.UnderGUI();
             var i = 30;
             var f1 = Future
                 .Bring<int>(() => i + 1000)
