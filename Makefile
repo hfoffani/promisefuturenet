@@ -12,10 +12,10 @@ clean:
 PromiseFuture.dll : PromiseFuture.cs
 	mcs -target:library PromiseFuture.cs
 
-PromiseFutureTest.dll : PromiseFutureTest.cs PromiseFuture.dll
-	mcs -target:library $(LIBSTEST) -d:NUNIT PromiseFutureTest.cs 
+TestPromiseFuture.dll : TestPromiseFuture.cs PromiseFuture.dll
+	mcs -target:library $(LIBSTEST) -d:NUNIT TestPromiseFuture.cs 
 
-test : PromiseFutureTest.dll
-	MONO_PATH=$(MONOPATH) $(NUNITCONSOLE) PromiseFutureTest.dll --nologo
+test : TestPromiseFuture.dll
+	MONO_PATH=$(MONOPATH) $(NUNITCONSOLE) TestPromiseFuture.dll --nologo
 
 
