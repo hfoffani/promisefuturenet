@@ -45,5 +45,7 @@ Just run make and it will build and test the DLL. The Makefile is fairly simple 
 
 ### Who do I talk to? ###
 
-Get in touch with me through hfoffani at gmail dot com.
+For questions or requests post an issue here or tweet me at
+[@herchu](http://twitter.com/herchu)
+
 
