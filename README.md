@@ -1,4 +1,4 @@
-# README #
+## PromiseFutureNET ##
 
 This is a couple of helpers I wrote to abstract
 an asynchronous programming by loosely following
